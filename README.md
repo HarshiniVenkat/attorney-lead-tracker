@@ -9,6 +9,8 @@ the leads it produces.
 
 **Stack:** Next.js 15 (App Router) · FastAPI · PostgreSQL · MinIO (S3) · MailHog (SMTP)
 
+**High Level System Overview** - https://claude.ai/code/artifact/5ecd84f2-29ec-46d2-8a7c-6acad8464072
+
 ---
 
 ## Quick start
