@@ -1,0 +1,44 @@
+{# Table layout and inline styles: email clients strip <style> blocks and
+   have no reliable flexbox support. #}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ subject }}</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#f4f5f7;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+           style="background-color:#f4f5f7; padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                 style="max-width:560px; background-color:#ffffff; border-radius:12px;
+                        overflow:hidden; border:1px solid #e5e7eb;
+                        font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <tr>
+              <td style="background-color:#0f172a; padding:20px 32px;">
+                <span style="color:#ffffff; font-size:18px; font-weight:600;
+                             letter-spacing:-0.01em;">{{ brand_name }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:32px;">
+                {% block content %}{% endblock %}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 32px; background-color:#f9fafb;
+                         border-top:1px solid #e5e7eb;">
+                <p style="margin:0; color:#6b7280; font-size:12px; line-height:1.5;">
+                  This is an automated message from {{ brand_name }}. Please do not reply
+                  directly to this email.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

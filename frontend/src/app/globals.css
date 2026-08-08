@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-surface-muted text-ink;
+  }
+
+  /* Visible focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-accent ring-offset-2 ring-offset-white;
+  }
+}

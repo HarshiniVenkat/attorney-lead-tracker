@@ -1,0 +1,19 @@
+NEW LEAD
+
+{{ full_name }} submitted an application.
+
+A new prospect has completed the public lead form. The lead is in PENDING state
+until someone reaches out and marks it.
+
+  Name       {{ full_name }}
+  Email      {{ email }}
+  Resume     {{ resume_filename }}
+  Submitted  {{ submitted_at }}
+
+View lead & download resume:
+{{ lead_url }}
+
+You'll need to sign in to the internal dashboard to open this link.
+
+---
+This is an automated message from {{ brand_name }}.

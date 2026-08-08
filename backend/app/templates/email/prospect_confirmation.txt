@@ -1,0 +1,18 @@
+Thanks, {{ first_name }} - we've got your application.
+
+We've received your information and your resume is safely on file. One of our
+attorneys will review your submission and reach out to you directly at
+{{ email }} with next steps.
+
+WHAT YOU SUBMITTED
+  Name    {{ full_name }}
+  Email   {{ email }}
+  Resume  {{ resume_filename }}
+
+There's nothing more you need to do right now. We'll be in touch soon.
+
+- The {{ brand_name }} Team
+
+---
+This is an automated message from {{ brand_name }}. Please do not reply directly
+to this email.

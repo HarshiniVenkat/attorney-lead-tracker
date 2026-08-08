@@ -1,0 +1,61 @@
+[project]
+name = "alma-leads-backend"
+version = "0.1.0"
+description = "Lead intake and management API"
+requires-python = ">=3.12"
+dependencies = [
+    # >=0.141 pulls Starlette >=1.0, which is where HTTP_422_UNPROCESSABLE_CONTENT
+    # and HTTP_413_CONTENT_TOO_LARGE replaced the now-deprecated spellings.
+    "fastapi>=0.141.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "email-validator>=2.2.0",
+    "sqlalchemy[asyncio]>=2.0.35",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+    "python-multipart>=0.0.10",
+    "pyjwt>=2.9.0",
+    "bcrypt>=4.2.0",
+    "jinja2>=3.1.4",
+    "aiosmtplib>=3.0.2",
+    "boto3>=1.35.0",
+    "typer>=0.12.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.27.0",
+    "ruff>=0.6.0",
+    "greenlet>=3.1.0",
+]
+
+[project.scripts]
+alma = "app.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4"]
+ignore = ["B008"]  # FastAPI Depends() in defaults is the documented idiom
+
+[tool.ruff.lint.isort]
+# Keep `from sqlalchemy import Enum as SAEnum` in the same block as its
+# siblings instead of exiling it to a second import statement.
+combine-as-imports = true
