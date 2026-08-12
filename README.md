@@ -70,6 +70,7 @@ frontend/                         Next.js app
     middleware.ts                 /admin route guard
 
 SYSTEM_OVERVIEW.md                how it works and why — start here
+docs/ai/                          how this was built with coding agents
 ```
 
 Layering is strict and one-directional:
@@ -133,6 +134,10 @@ credentials.
 
 New to the project? [SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md) is a plain-language
 tour of how everything fits together and why.
+
+This was built with Claude Code. [docs/ai/AI_USAGE.md](docs/ai/AI_USAGE.md)
+explains how, and [docs/ai/transcript.md](docs/ai/transcript.md) is the full
+conversation.
 
 A few decisions that aren't obvious from the code alone — all covered there in
 more depth:
